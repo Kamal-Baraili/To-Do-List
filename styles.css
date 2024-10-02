@@ -28,20 +28,21 @@ h1 {
 #input_data {
   margin: 1.25rem 0.5rem;
   padding: 0.5rem 1rem;
-  width: 75%;
+  width: 70%;
   height: 32px;
   border-radius: 10px;
   border: 1px solid black;
 }
 
-#addBtn {
+#add_btn {
   height: 50px;
-  width: 12%;
+  width: 16%;
   font-size: 1.125rem;
   color: white;
   background-color: rgb(23, 170, 23);
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 ul {
@@ -62,4 +63,5 @@ li {
   background-color: transparent;
   border: none;
   font-size: 1rem;
+  cursor: pointer;
 }
