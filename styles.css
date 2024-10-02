@@ -50,13 +50,14 @@ ul {
   padding: 0.5rem 1rem;
 }
 
-li {
+ul > li {
   font-size: 1.75rem;
   padding: 0.5rem;
   margin: 2rem 0;
   display: flex;
   justify-content: space-between;
   border: 1px solid white;
+  clear: right;
 }
 
 .task_button {
@@ -64,4 +65,10 @@ li {
   border: none;
   font-size: 1rem;
   cursor: pointer;
+}
+
+.rmvall {
+  color: red;
+  margin: 0 0 1em 0;
+  
 }
