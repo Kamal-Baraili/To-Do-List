@@ -1,7 +1,7 @@
 const input = document.getElementById("input_data");
 const task_list = document.getElementById("task_list");
 const addBtn = document.getElementById("add_btn");
-let count = -1;
+let count = localStorage.length - 1;
 let todos = [];
 
 if (localStorage.length != 0) {
@@ -101,7 +101,6 @@ function showData() {
     taskText.style.width = "70%";
     task.appendChild(taskText);
     taskText.innerHTML = window.localStorage.getItem(`todo${i}`);
-    console.log(taskText);
 
     if (taskText.innerHTML != "") {
       task_list.appendChild(task);
