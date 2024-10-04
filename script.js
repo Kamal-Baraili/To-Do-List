@@ -1,7 +1,9 @@
 const input = document.getElementById("input_data");
 const task_list = document.getElementById("task_list");
 const addBtn = document.getElementById("add_btn");
-let count = localStorage.length - 1;
+let count = localStorage.getItem("count")
+  ? parseInt(localStorage.getItem("count"))
+  : -1;
 let todos = [];
 
 if (localStorage.length != 0) {
@@ -20,9 +22,11 @@ function addTask() {
     alert("Please enter to do");
   } else {
     count++;
-    todos[count] = "todo" + count;
+    localStorage.setItem("count", count);
+    let counter = localStorage.getItem("count");
+    todos[counter] = "todo" + counter;
     if (addBtn.innerText == "Add") {
-      window.localStorage.setItem(todos[count], input.value);
+      window.localStorage.setItem(todos[counter], input.value);
       addData();
     }
   }
@@ -94,7 +98,7 @@ function addData() {
 }
 
 function showData() {
-  for (i = 0; i <= localStorage.length; i++) {
+  for (i = 0; i <= 500; i++) {
     let task = document.createElement("li");
     const taskText = document.createElement("p");
     taskText.style.margin = "0";
@@ -137,7 +141,7 @@ function showData() {
         const temp = input.value;
         input.focus();
 
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 500; i++) {
           const val = localStorage.getItem(`todo${i}`);
           if (val === temp) {
             var keyIndex = i;
